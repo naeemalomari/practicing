@@ -12,23 +12,33 @@ import java.util.*;
 public class Library {
     public static void main(String[] args) {
 //        System.out.println("hi");
-//        repeatedWord("hi my name is slim shady hi");
-        int arr[] = {1, 2, 3, 4, 7, 9, 0};
+//        System.out.println(repeatedWord("my name is slim shady hi slim shady"));
+//        int arr[] = {1,1, 2, 3, 4, 7, 9};
+//        int arr2[] = {1, 2, 3, 4, 7, 9, 0};
 //        System.out.println(repeatedIntegerIndex(arr));
 //        System.out.println(repeatedIntegerIndex2(arr));
 //        System.out.println(swap(5,6));
-        int array[] = {2, 3, 4, 10, 7, 9, 8, 6, 5};
-        System.out.println(secondMax(arr));
-        System.out.println(largerNumers(array));
-//        System.out.println(isPrime(13, 2));
+//        int array[] = {1, 2, 3, 4, 10, 7, 9, 8, 6, 5,7,8};
+//        System.out.println(secondMax(arr));
+//        System.out.println(largerNumers(array));
+//        System.out.println(isPrime(8, 2));
 //        isPrime1();
-        System.out.println(checkCube(153));
-        System.out.println(reverse(1234));
-        System.out.println(tekrarString("aaaddcjfbirc"));
-        System.out.println(Arrays.toString(middleAdding(arr, 2)));
-        System.out.println(reverseSentence("hi my name is slim shady"));
+
+
+//        System.out.println(checkCube(153));
+//        System.out.println(reverse(1234));
+//        System.out.println(tekrarString("aaaddcjfbirc"));
+//        System.out.println(Arrays.toString(middleAdding(arr, 2)));
+//        System.out.println(reverseSentence("hi my name is slim shady"));
+//        int arrays[] = {2, 2, 3, 4, 4, 15, 15};
+//        System.out.println(sumsss(arrays));
+//        print(3);
+//        int array[] = {1, 2, 3, 4, 5, 6};
+//        System.out.println(hi(3, array));
+        uoec();
 
     }
+
 
     //////////////////////repeated word///////////////////////////
     public static String repeatedWord(String strings) {
@@ -36,20 +46,17 @@ public class Library {
         String[] stringArr = lowerCased.split(" ");
         Hashtable<String, Integer> hashMap = new Hashtable<String, Integer>();
         for (String element : stringArr) {
-
             if (element.contains(",")) {
                 element = element.substring(0, element.length() - 1);
             }
             if (!element.equals("")) {
                 int counter = hashMap.get(element) != null ? hashMap.get(element) : 0;
-
                 if (counter == 1) {
                     return element;
                 }
                 hashMap.put(element, counter + 1);
             }
         }
-
         return "None";
     }
 
@@ -95,7 +102,6 @@ public class Library {
     public static int swap(int a, int b) {
         a = 5;
         b = 6;
-
         a = a + b;
         b = a - b;
         a = a - b;
@@ -103,7 +109,7 @@ public class Library {
         return a;
     }
 
-    ////////////////////////// return third integer in an array ////////////////
+    ////////////////////////// return third max integer in an array ////////notyet////////
     public static int secondMax(int arr[]) {
         int max = arr[0];
         int secondMax = arr[0];
@@ -122,9 +128,8 @@ public class Library {
         }
         return third;
     }
-///////// return a new array of the numbers that have no larger numbers on their right//////
-//int arr[] = {1,2,3,4,7,9,8,6,5};
 
+    ///////// return a new array of the numbers that have no larger numbers on their right//////
     public static ArrayList largerNumers(int arr[]) {
         ArrayList list = new ArrayList<>();
         int max = arr[arr.length - 1];
@@ -138,6 +143,28 @@ public class Library {
         return list;
     }
 
+    ////////////////////////////////////////
+    public static ArrayList<Integer> sumsss(int[] arr) {
+        ArrayList<Integer> list = new ArrayList<>();
+        int sum = 0;
+        for (int i = 0; i < arr.length - 1; i++) {
+            if (arr[i] == arr[i + 1]) {
+                sum = sum + arr[i];
+            } else {
+                sum = sum + arr[i];
+                list.add(sum);
+                sum = 0;
+            }
+        }
+        if (sum != 0) {
+            list.add(sum + arr[arr.length - 1]);
+        } else {
+            list.add(arr[arr.length - 1]);
+        }
+        return list;
+    }
+
+    ///////////////////////////////////////////////////////
     static boolean isPrime(int n, int i) {
         // Base cases
         if (n <= 2)
@@ -151,15 +178,15 @@ public class Library {
     }
 
     static int isPrime1() {
-
         int counter = 0;
-        for (int j = 1; j < 100; j++) {
+        for (int j = 2; j < 100; j++) {
             if (isPrime(j, 2)) {
                 System.out.println(j);
             }
         }
         return counter;
     }
+
 
     static boolean checkCube(int number) {
         int sum = 0;
@@ -173,9 +200,8 @@ public class Library {
 
     static int reverse(int number) {
         int newNumber = 0;
-
         while (number != 0) {
-            int y = (number % 10);
+            int y = number % 10;
             newNumber = newNumber * 10 + y;
             number = number / 10;
         }
@@ -200,25 +226,6 @@ public class Library {
         return m;
     }
 
-    private static List<Integer> sumsss(int[] arr) {
-        List<Integer> list = new ArrayList<>();
-        int sum = 0;
-        for (int i = 0; i < arr.length - 1; i++) {
-            if (arr[i] == arr[i + 1]) {
-                sum = sum + arr[i];
-            } else {
-                sum = sum + arr[i];
-                list.add(sum);
-                sum = 0;
-            }
-        }
-        if (sum != 0) {
-            list.add(sum + arr[arr.length - 1]);
-        } else {
-            list.add(arr[arr.length - 1]);
-        }
-        return list;
-    }
 
     static int[] middleAdding(int[] array, int m) {
         for (int i = array.length - 1; i >= array.length / 2; i--) {
@@ -230,16 +237,48 @@ public class Library {
 
     static String reverseSentence(String arrays) {
         String string = "";
-        String strings="";
+        String strings = "";
         for (int i = arrays.length() - 1; i >= 0; i--) {
-            if(arrays.charAt(i) == ' '){
-                strings=strings +" "+ string;
-                string="";
-            }else{
-                string=arrays.charAt(i) + string;
+            if (arrays.charAt(i) == ' ') {
+                strings = strings + " " + string;
+                string = "";
+            } else {
+                string = arrays.charAt(i) + string;
             }
         }
         return strings;
     }
+
+    public static void print(int number) {
+        int counter = 1;
+        for (int i = 1; i <= number; i++) {
+            System.out.println();
+            for (int j = 0; j < i; j++) {
+                System.out.print(counter);
+                counter++;
+            }
+        }
+    }
+
+    static ArrayList<Integer> hi(int n, int[] his) {
+        ArrayList<Integer> list = new ArrayList<>();
+        for (int i = his.length - n; i <= his.length - 1; i++) {
+
+            list.add(his[i]);
+        }
+        for (int i = 1; i <= his.length - n; i++) {
+            list.add(i);
+        }
+        return list;
+    }
+static  void uoec(){
+        try {
+            System.out.println("hi");
+            throw new Exception();
+        } catch (Exception e) {
+        } finally {
+            System.out.println("bye");
+        }
+}
 
 }
