@@ -3,14 +3,21 @@
  */
 package practicing;
 
-import com.sun.source.tree.BreakTree;
-import org.w3c.dom.ls.LSOutput;
+import com.google.common.io.ByteArrayDataOutput;
 
-import java.lang.reflect.Array;
 import java.util.*;
+
 
 public class Library {
     public static void main(String[] args) {
+        Animal dog = new Duck();
+        dog.vv();
+        dog.bb();
+        Cat duck2 = new Duck(); // Object from interface
+
+        System.out.println(Cat.name);
+
+        Cat sshf = new Donky();
 //        System.out.println("hi");
 //        System.out.println(repeatedWord("my name is slim shady hi slim shady"));
 //        int arr[] = {1,1, 2, 3, 4, 7, 9};
@@ -35,8 +42,36 @@ public class Library {
 //        print(3);
 //        int array[] = {1, 2, 3, 4, 5, 6};
 //        System.out.println(hi(3, array));
-        uoec();
+//        uoec();
+//        int []arr = {0, 5, 4, 9, 3};
+//        System.out.println(Arrays.toString(miss(arr)));
+//        int []shuffArray= {2,5,1,3,4,7};
+//        System.out.println(Arrays.toString(shuffleFromN(shuffArray, 3)));
+//        int[] arr1 = {2, 3, 1, 3, 2, 4, 6, 7, 9, 2, 19};
+//        int[] arr2 = {2, 1, 4, 3, 9, 6};
+//
+//        System.out.println(Arrays.toString(relativeSortArray(arr1, arr2)));
+//
+        int[] arr3 = {28, 6, 22, 8, 44, 17};
+        int[] arr4 = {22, 28, 8, 6};
+        System.out.println(Arrays.toString(relativeSortArray(arr3, arr4)));
 
+//        int[] arrayssssss = {1, 1, 2, 2, 2};
+//        winner(arrayssssss);
+//
+//        System.out.println(tekrar2("000111",3));
+        int[] arr = {1, 2, 3, 4};
+        System.out.println(summ(80,95));
+//        Set<Integer> set= new TreeSet<>();
+//        set.add(5);
+//        set.add(2);
+//        set.add(3);
+        //SORTED DATA AND REFUSE DUPLICATES.
+//        set.add(4);
+//        set.add(1);
+//        set.add(5);
+//        set.add(5);
+//        System.out.println(set);
     }
 
 
@@ -177,6 +212,16 @@ public class Library {
         return isPrime(n, i + 1);
     }
 
+    static boolean isPrimes(int n) {
+        boolean sah = true;
+        if (n < 2) return false;
+        if (n == 2) return true;
+        for (int i = 2; i < n - 1; i++) {
+            if (n % i == 0) return false;
+        }
+        return sah;
+    }
+
     static int isPrime1() {
         int counter = 0;
         for (int j = 2; j < 100; j++) {
@@ -226,13 +271,38 @@ public class Library {
         return m;
     }
 
-
     static int[] middleAdding(int[] array, int m) {
         for (int i = array.length - 1; i >= array.length / 2; i--) {
             array[i] = array[i - 1];
         }
         array[array.length / 2] = m;
         return array;
+    }
+
+    static int[] miss(int[] array) {
+        int max = array[0];
+        int min = array[0];
+        HashSet<Integer> H = new HashSet<>();
+        for (int i = 0; i < array.length; i++) {
+            H.add(array[i]);
+            if (array[i] > max) {
+                max = array[i];
+            }
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
+        int n = (max + 1) - min;
+        int m = n / 2 + (max + min);
+        int[] newArr = new int[m - array.length];
+        int counter = 0;
+        for (int i = min; i <= max; i++) {
+            if (!H.contains(i)) {
+                newArr[counter] = i;
+                counter++;
+            }
+        }
+        return newArr;
     }
 
     static String reverseSentence(String arrays) {
@@ -271,14 +341,95 @@ public class Library {
         }
         return list;
     }
-static  void uoec(){
+
+    static void uoec() {
         try {
             System.out.println("hi");
             throw new Exception();
         } catch (Exception e) {
+            e.printStackTrace();
         } finally {
             System.out.println("bye");
         }
-}
+    }
+
+    //[2,5,1,3,4,7], N=3
+    //[2,3,5,4,1,7]
+    public static int[] shuffleFromN(int[] nums, int number) {
+        int newArray[] = new int[nums.length];
+        newArray[0] = nums[0];
+        int counter = 1;
+        for (int i = 1; i <= nums.length - 1; i++) {
+            if (i % 2 == 0) {
+                newArray[i] = nums[counter];
+                counter++;
+            } else {
+                newArray[i] = nums[number];
+                number++;
+            }
+        }
+        return newArray;
+    }
+
+    public static int[] relativeSortArray(int[] arr1, int[] arr2) {
+        int[] newArray = new int[1001];
+        for (int i = 0; i < arr1.length; i++) {
+            newArray[arr1[i]]++;
+        }
+        int k = 0;
+        for (int i = 0; i < arr2.length; i++) {
+            for (int j = 0; j < newArray[arr2[i]]; j++) {
+                arr1[k++] = arr2[i];
+            }
+            newArray[arr2[i]] = 0;
+        }
+        for (int i = 0; i < newArray.length; i++) {
+            for (int j = 0; j < newArray[i]; j++) {
+                arr1[k++] = i;
+            }
+        }
+        return arr1;
+    }
+
+    static void winner(int[] array) {
+        int player1 = 0;
+        int player2 = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == 1) {
+                player1++;
+            }
+            if (array[i] == 2) {
+                player2++;
+            }
+        }
+        if (player1 > player2) {
+            System.out.println(player1);
+        } else {
+            System.out.println(player2);
+        }
+        if (player1 == player2) System.out.println("draw");
+    }
+    // "00011111100011001" n=6
+    static boolean tekrar2(String str, int n) {
+        int counter = 1;
+
+        for (int i = 0; i < str.length() - 1; i++) {
+            if (str.charAt(i) == str.charAt(i + 1)) {
+                counter++;
+            } else {
+                counter = 1;
+            }
+        }
+        if (counter == n) return true;
+        return false;
+    }
+
+    public static int summ(int a, int b) {
+        int sum = 0;
+        for (int i = a; i <= b; i++) {
+            sum = sum + i;
+        }
+        return sum;
+    }
 
 }
