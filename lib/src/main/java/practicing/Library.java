@@ -10,14 +10,7 @@ import java.util.*;
 
 public class Library {
     public static void main(String[] args) {
-        Animal dog = new Duck();
-        dog.vv();
-        dog.bb();
-        Cat duck2 = new Duck(); // Object from interface
 
-        System.out.println(Cat.name);
-
-        Cat sshf = new Donky();
 //        System.out.println("hi");
 //        System.out.println(repeatedWord("my name is slim shady hi slim shady"));
 //        int arr[] = {1,1, 2, 3, 4, 7, 9};
