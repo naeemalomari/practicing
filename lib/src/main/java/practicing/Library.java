@@ -10,7 +10,17 @@ import java.util.*;
 
 public class Library {
     public static void main(String[] args) {
-
+        Animal dog = new Dog("Naeem", 25);
+        Animal dog1 = new Dog("Naeem", 25);
+//        System.out.println(dog.hashCode());
+//        System.out.println(dog1.hashCode());
+//        System.out.println(dog.equals(dog));
+//        System.out.println(dog1.equals(dog));
+//        String name = "Ahmad";
+//        String name1 = "Ahmad";
+//        System.out.println(name.hashCode());
+//        System.out.println(name1.hashCode());
+//        System.out.println(name.equals(name1));
 //        System.out.println("hi");
 //        System.out.println(repeatedWord("my name is slim shady hi slim shady"));
 //        int arr[] = {1,1, 2, 3, 4, 7, 9};
@@ -45,16 +55,16 @@ public class Library {
 //
 //        System.out.println(Arrays.toString(relativeSortArray(arr1, arr2)));
 //
-        int[] arr3 = {28, 6, 22, 8, 44, 17};
-        int[] arr4 = {22, 28, 8, 6};
-        System.out.println(Arrays.toString(relativeSortArray(arr3, arr4)));
+//        int[] arr3 = {28, 6, 22, 8, 44, 17};
+//        int[] arr4 = {22, 28, 8, 6};
+//        System.out.println(Arrays.toString(relativeSortArray(arr3, arr4)));
 
 //        int[] arrayssssss = {1, 1, 2, 2, 2};
 //        winner(arrayssssss);
 //
 //        System.out.println(tekrar2("000111",3));
-        int[] arr = {1, 2, 3, 4};
-        System.out.println(summ(80,95));
+//        int[] arr = {1, 2, 3, 4};
+//        System.out.println(summ(80, 95));
 //        Set<Integer> set= new TreeSet<>();
 //        set.add(5);
 //        set.add(2);
@@ -65,6 +75,28 @@ public class Library {
 //        set.add(5);
 //        set.add(5);
 //        System.out.println(set);
+
+        String[] arrayOfProducts = {"Apple", "Banana", "Cucumber", "Watermelon", "Ice-cream", "Orange", "Eggplant",
+                "Egg"};
+//        products(arrayOfProducts);
+        printProduct(arrayOfProducts);
+    }
+
+    public static void products(String[] arrayOfProducts) {
+        for (int i = 0; i <= arrayOfProducts.length - 1; i++) {
+            if (arrayOfProducts[i].contains("A") || arrayOfProducts[i].contains("E") || arrayOfProducts[i].contains("I")
+                    || arrayOfProducts[i].contains("O") || arrayOfProducts[i].contains("U")) {
+                System.out.println(arrayOfProducts[i]);
+            }
+        }
+    }
+
+    public static void printProduct(String[] arrayOfProducts) {
+        for (int i = 0; i < arrayOfProducts.length; i++) {
+            if (arrayOfProducts[i].length() > 5) {
+                System.out.println(arrayOfProducts[i]);
+            }
+        }
     }
 
 
@@ -402,6 +434,7 @@ public class Library {
         }
         if (player1 == player2) System.out.println("draw");
     }
+
     // "00011111100011001" n=6
     static boolean tekrar2(String str, int n) {
         int counter = 1;
@@ -424,5 +457,6 @@ public class Library {
         }
         return sum;
     }
+
 
 }
