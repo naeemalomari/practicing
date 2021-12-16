@@ -76,17 +76,19 @@ public class Library {
 //        set.add(5);
 //        System.out.println(set);
 
-        String[] arrayOfProducts = {"Apple", "Banana", "Cucumber", "Watermelon", "Ice-cream", "Orange", "Eggplant",
-                "Egg"};
-        System.out.println("--------------------------- Q 1 ------------------------");
-        products(arrayOfProducts);
-        System.out.println("--------------------------- Q 2 ------------------------");
-
-        printProduct(arrayOfProducts);
-        System.out.println("--------------------------- Q 3 ------------------------");
-
-        countCharacters("THis & * 12345678z_k ");
-
+//        String[] arrayOfProducts = {"Apple", "Banana", "Cucumber", "Watermelon", "Ice-cream", "Orange", "Eggplant",
+//                "Egg"};
+//        System.out.println("--------------------------- Q 1 ------------------------");
+//        products(arrayOfProducts);
+//        System.out.println("--------------------------- Q 2 ------------------------");
+//
+//        printProduct(arrayOfProducts);
+//        System.out.println("--------------------------- Q 3 ------------------------");
+//
+//        countCharacters("THis & * 12345678z_k ");
+//
+//
+        System.out.println(divider(16,4,0));
     }
 
     public static void products(String[] arrayOfProducts) {
@@ -492,5 +494,12 @@ public class Library {
         return sum;
     }
 
+    public static int divider(int number, int division,   int counter) {
+        if (number >= division) {
+            counter++;
+            return divider(number-division, division, counter);
+        }
+        return counter;
+    }
 
 }
