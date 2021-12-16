@@ -78,8 +78,15 @@ public class Library {
 
         String[] arrayOfProducts = {"Apple", "Banana", "Cucumber", "Watermelon", "Ice-cream", "Orange", "Eggplant",
                 "Egg"};
-//        products(arrayOfProducts);
+        System.out.println("--------------------------- Q 1 ------------------------");
+        products(arrayOfProducts);
+        System.out.println("--------------------------- Q 2 ------------------------");
+
         printProduct(arrayOfProducts);
+        System.out.println("--------------------------- Q 3 ------------------------");
+
+        countCharacters("THis & * 12345678z_k ");
+
     }
 
     public static void products(String[] arrayOfProducts) {
@@ -99,6 +106,33 @@ public class Library {
         }
     }
 
+    public static void countCharacters(String string) {
+        int lettersCounter = 0;
+        int numbersCounter = 0;
+        int charactersCounter = 0;
+        for (int i = 0; i < string.length(); i++) {
+            char singleCharacter = string.charAt(i);
+            if ((singleCharacter >= 65 && singleCharacter <= 90) || (singleCharacter >= 97 && singleCharacter <= 122)) {
+                lettersCounter++;
+            } else if (singleCharacter >= 48 && singleCharacter <= 57) {
+                numbersCounter++;
+            } else {
+                charactersCounter++;
+            }
+        }
+        System.out.println("Letters =>" + lettersCounter + "\n" + "Numbers =>" + numbersCounter + "\n" + "Special Characters (including spaces) =>" + charactersCounter);
+        System.out.println(string.length());
+
+    }
+    //SELECT Count(*) FROM Products;
+    //SELECT Count(*) FROM ProductsPrice WHERE ProductPrice < 5;
+    //
+    //SELECT Products.ProductName, ProductsPrice.ProductPrice
+    //FROM Products
+    //INNER JOIN ProductsPrice ON Products.ProductID = ProductsPrice.ProductID
+    //WHERE ProductsPrice.ProductPrice = (
+    //    SELECT MIN(ProductPrice) FROM ProductsPrice
+    //);
 
     //////////////////////repeated word///////////////////////////
     public static String repeatedWord(String strings) {
