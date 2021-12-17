@@ -76,25 +76,24 @@ public class Library {
 //        set.add(5);
 //        System.out.println(set);
 
-//        String[] arrayOfProducts = {"Apple", "Banana", "Cucumber", "Watermelon", "Ice-cream", "Orange", "Eggplant",
-//                "Egg"};
-//        System.out.println("--------------------------- Q 1 ------------------------");
-//        products(arrayOfProducts);
-//        System.out.println("--------------------------- Q 2 ------------------------");
-//
-//        printProduct(arrayOfProducts);
-//        System.out.println("--------------------------- Q 3 ------------------------");
-//
-//        countCharacters("THis & * 12345678z_k ");
-//
-//
-        System.out.println(divider(16,4,0));
-    }
+        String[] arrayOfProducts = {"Apple", "Banana", "CucuAmber", "Watermelon", "Ice-cream", "Orange", "Eggplant",
+                "Egg"};
+        System.out.println("--------------------------- Q 1 ------------------------");
+        products(arrayOfProducts);
+        System.out.println("--------------------------- Q 2 ------------------------");
 
-    public static void products(String[] arrayOfProducts) {
-        for (int i = 0; i <= arrayOfProducts.length - 1; i++) {
-            if (arrayOfProducts[i].contains("A") || arrayOfProducts[i].contains("E") || arrayOfProducts[i].contains("I")
-                    || arrayOfProducts[i].contains("O") || arrayOfProducts[i].contains("U")) {
+        printProduct(arrayOfProducts);
+        System.out.println("--------------------------- Q 3 ------------------------");
+
+        countCharacters("THis & * 12345678z_k ");
+
+//        System.out.println(divider(16,4,0));
+    }
+    public static void products(String [] arrayOfProducts) {
+        for(int i = 0; i < arrayOfProducts.length; i++){
+            char fChar = arrayOfProducts[i].charAt(0);
+            if(fChar == 'A' || fChar == 'E'
+                    || fChar == 'I' || fChar == 'O' || fChar == 'U' ){
                 System.out.println(arrayOfProducts[i]);
             }
         }
