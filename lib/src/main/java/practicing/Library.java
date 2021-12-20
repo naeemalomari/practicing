@@ -3,25 +3,58 @@
  */
 package practicing;
 
-import com.google.common.io.ByteArrayDataOutput;
+import Cars.Bmw;
+import Cars.Honda;
+import Cars.Lixiz;
 
 import java.util.*;
 
 
 public class Library {
     public static void main(String[] args) {
-        Animal dog = new Dog("Naeem", 25);
-        Animal dog1 = new Dog("Naeem", 25);
-//        System.out.println(dog.hashCode());
-//        System.out.println(dog1.hashCode());
-//        System.out.println(dog.equals(dog));
-//        System.out.println(dog1.equals(dog));
-//        String name = "Ahmad";
-//        String name1 = "Ahmad";
-//        System.out.println(name.hashCode());
-//        System.out.println(name1.hashCode());
-//        System.out.println(name.equals(name1));
-//        System.out.println("hi");
+//"Bmw32", 2010,12500.0
+        Car bmw = new Bmw("Bmw320", 2010,12500.0);
+
+        bmw.setType("Bmw320");
+        System.out.println(bmw.getType());
+        bmw.setPrice(12500.0);
+        System.out.println(bmw.getPrice());
+        bmw.setModel(2010);
+        System.out.println(bmw.getModel());
+
+        Car bmw2 = new Bmw("Bmw320", 2010,12500.0);
+        bmw2.setType("Bmw320");
+        System.out.println(bmw2.getType());
+        bmw2.setPrice(12500.0);
+        System.out.println(bmw2.getPrice());
+        bmw2.setModel(2010);
+        System.out.println(bmw2.getModel());
+
+
+        System.out.println(bmw.hashCode());
+        System.out.println(bmw2.hashCode());
+        System.out.println(bmw.equals(bmw2));
+        System.out.println("---------------------- -------------------------");
+
+        Honda  honda = new Honda();
+        Honda honda2 = new Honda("Bmw32", 2010,12500.0);
+        honda.setType("Honda");honda2.setType("Honda");
+        System.out.println(honda.getType());
+        honda.setModel(2020);honda2.setModel(2020);
+        System.out.println(honda.getModel());
+        honda.setPrice(25000.0); honda2.setPrice(25000.0);
+        System.out.println(honda.getPrice());
+        System.out.println(honda.hashCode());
+        System.out.println(honda2.hashCode());
+        System.out.println(honda.equals(honda2));
+        System.out.println("---------------------- -------------------------");
+
+        Lixiz car = new Lixiz("hi");
+        Lixiz car2 = new Lixiz("hi");
+        System.out.println(car.hashCode());
+        System.out.println(car2.hashCode());
+        System.out.println(car2.equals(car));
+
 //        System.out.println(repeatedWord("my name is slim shady hi slim shady"));
 //        int arr[] = {1,1, 2, 3, 4, 7, 9};
 //        int arr2[] = {1, 2, 3, 4, 7, 9, 0};
@@ -76,19 +109,22 @@ public class Library {
 //        set.add(5);
 //        System.out.println(set);
 
-        String[] arrayOfProducts = {"Apple", "Banana", "CucuAmber", "Watermelon", "Ice-cream", "Orange", "Eggplant",
-                "Egg"};
-        System.out.println("--------------------------- Q 1 ------------------------");
-        products(arrayOfProducts);
-        System.out.println("--------------------------- Q 2 ------------------------");
-
-        printProduct(arrayOfProducts);
-        System.out.println("--------------------------- Q 3 ------------------------");
-
-        countCharacters("THis & * 12345678z_k ");
+//        String[] arrayOfProducts = {"Apple", "Banana", "CucuAmber", "Watermelon", "Ice-cream", "Orange", "Eggplant",
+//                "Egg"};
+//        System.out.println("--------------------------- Q 1 ------------------------");
+//        products(arrayOfProducts);
+//        System.out.println("--------------------------- Q 2 ------------------------");
+//
+//        printProduct(arrayOfProducts);
+//        System.out.println("--------------------------- Q 3 ------------------------");
+//
+//        countCharacters("THis & * 12345678z_k ");
 
 //        System.out.println(divider(16,4,0));
+
+
     }
+
     public static void products(String [] arrayOfProducts) {
         for(int i = 0; i < arrayOfProducts.length; i++){
             char fChar = arrayOfProducts[i].charAt(0);
