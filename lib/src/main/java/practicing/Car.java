@@ -2,12 +2,14 @@ package practicing;
 
 import Cars.Cars;
 
+import javax.lang.model.element.TypeElement;
 import java.util.Objects;
 
 public abstract class Car implements Cars {
     protected String type;
     protected Integer model;
     protected Double price;
+
 
 
     public Car(String type, Integer model, Double price) {
@@ -19,28 +21,29 @@ public abstract class Car implements Cars {
     public Car() {
     }
 
-    public String getType() {
+
+    public void setType(String type){
+        this.type=type;
+    }
+
+    public void setModel (Integer model){
+        this.model=model;
+    }
+
+    public void setPrice(Double price){
+        this.price=price;
+    }
+
+    public String getType(){
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public Integer getModel() {
+    public Integer getModel(){
         return model;
     }
 
-    public void setModel(Integer model) {
-        this.model = model;
-    }
-
-    public Double getPrice() {
+    public Double getPrice(){
         return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
     }
 
     @Override

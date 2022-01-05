@@ -12,57 +12,62 @@ import java.util.*;
 
 public class Library {
     public static void main(String[] args) {
-//"Bmw32", 2010,12500.0
-        Car bmw = new Bmw("Bmw320", 2010,12500.0);
+//        "Bmw32", 2010, 12500.0;
+//        Car bmw = new Bmw("Bmw320", 2010, 12500.0);
+//
+//        bmw.setType("Bmw320");
+//        System.out.println(bmw.getType());
+//        bmw.setPrice(12500.0);
+//        System.out.println(bmw.getPrice());
+//        bmw.setModel(2010);
+//        System.out.println(bmw.getModel());
+//
+//        Car bmw2 = new Bmw("Bmw320", 2010, 12500.0);
+//        bmw2.setType("Bmw320");
+//        System.out.println(bmw2.getType());
+//        bmw2.setPrice(12500.0);
+//        System.out.println(bmw2.getPrice());
+//        bmw2.setModel(2010);
+//        System.out.println(bmw2.getModel());
+//
+//
+//        System.out.println(bmw.hashCode());
+//        System.out.println(bmw2.hashCode());
+//        System.out.println(bmw.equals(bmw2));
+//        System.out.println("---------------------- -------------------------");
+//
+//        Honda honda = new Honda();
+//        Honda honda2 = new Honda("Bmw32", 2010, 12500.0);
+//        honda.setType("Honda");
+//        honda2.setType("Honda");
+//        System.out.println(honda.getType());
+//        honda.setModel(2020);
+//        honda2.setModel(2020);
+//        System.out.println(honda.getModel());
+//        honda.setPrice(25000.0);
+//        honda2.setPrice(25000.0);
+//        System.out.println(honda.getPrice());
+//        System.out.println(honda.hashCode());
+//        System.out.println(honda2.hashCode());
+//        System.out.println(honda.equals(honda2));
+//        System.out.println("---------------------- -------------------------");
+//
+//        Lixiz car = new Lixiz("hi");
+//        Lixiz car2 = new Lixiz("hi");
+//        System.out.println(car.hashCode());
+//        System.out.println(car2.hashCode());
+//        System.out.println(car2.equals(car));
 
-        bmw.setType("Bmw320");
-        System.out.println(bmw.getType());
-        bmw.setPrice(12500.0);
-        System.out.println(bmw.getPrice());
-        bmw.setModel(2010);
-        System.out.println(bmw.getModel());
-
-        Car bmw2 = new Bmw("Bmw320", 2010,12500.0);
-        bmw2.setType("Bmw320");
-        System.out.println(bmw2.getType());
-        bmw2.setPrice(12500.0);
-        System.out.println(bmw2.getPrice());
-        bmw2.setModel(2010);
-        System.out.println(bmw2.getModel());
-
-
-        System.out.println(bmw.hashCode());
-        System.out.println(bmw2.hashCode());
-        System.out.println(bmw.equals(bmw2));
-        System.out.println("---------------------- -------------------------");
-
-        Honda  honda = new Honda();
-        Honda honda2 = new Honda("Bmw32", 2010,12500.0);
-        honda.setType("Honda");honda2.setType("Honda");
-        System.out.println(honda.getType());
-        honda.setModel(2020);honda2.setModel(2020);
-        System.out.println(honda.getModel());
-        honda.setPrice(25000.0); honda2.setPrice(25000.0);
-        System.out.println(honda.getPrice());
-        System.out.println(honda.hashCode());
-        System.out.println(honda2.hashCode());
-        System.out.println(honda.equals(honda2));
-        System.out.println("---------------------- -------------------------");
-
-        Lixiz car = new Lixiz("hi");
-        Lixiz car2 = new Lixiz("hi");
-        System.out.println(car.hashCode());
-        System.out.println(car2.hashCode());
-        System.out.println(car2.equals(car));
 
 //        System.out.println(repeatedWord("my name is slim shady hi slim shady"));
-//        int arr[] = {1,1, 2, 3, 4, 7, 9};
+        int arr[] = {1, 2, 3, 4, 7, 9, 9};
 //        int arr2[] = {1, 2, 3, 4, 7, 9, 0};
+//        System.out.println(repeatedInteger(arr));
 //        System.out.println(repeatedIntegerIndex(arr));
 //        System.out.println(repeatedIntegerIndex2(arr));
 //        System.out.println(swap(5,6));
-//        int array[] = {1, 2, 3, 4, 10, 7, 9, 8, 6, 5,7,8};
-//        System.out.println(secondMax(arr));
+//        int array[] = {1, 2, 3, 4,10, 7, 9, 8, 6, 5,7,8};
+//        System.out.println(secondMax(array));
 //        System.out.println(largerNumers(array));
 //        System.out.println(isPrime(8, 2));
 //        isPrime1();
@@ -122,14 +127,109 @@ public class Library {
 
 //        System.out.println(divider(16,4,0));
 
+//        int[] array = {1,2,1,2,1};
+//        System.out.println(majority(array));
+//        int[] array1 = {5, 14, 5, 14, 8, 8, 7, 7, 19};
+//        System.out.println(notRepeated(array1));
+//        System.out.println(notRepeated1(array));
 
+//        int[] nums = {0, 1, 0, 3, 12};
+//        System.out.println(Arrays.toString(moveZeros1(nums)));
+//
+        int[] array = {4, 3, 2, 7, 2, 3, 1, 9};
+        System.out.println(findDisappearedNumbers(array));
     }
 
-    public static void products(String [] arrayOfProducts) {
-        for(int i = 0; i < arrayOfProducts.length; i++){
+    public static List<Integer> findDisappearedNumbers(int[] nums) {
+        List<Integer> missingNumbers = new ArrayList<>();
+        HashSet<Integer> numbers = new HashSet<>();
+        for (int i : nums) {
+            numbers.add(i);
+        }
+        for (int i = 1; i <= nums.length; i++) {
+
+            if (!numbers.contains(i)) {
+                missingNumbers.add(i);
+            }
+        }
+        return missingNumbers;
+    }
+
+    public static int[] moveZeros(int[] nums) {
+
+        for (int i = 0, j = 0; i < nums.length && j < nums.length; j++) {
+            if (nums[j] != 0) {
+                int tmp = nums[i];
+                nums[i++] = nums[j];
+                nums[j] = tmp;
+            }
+        }
+        return nums;
+    }
+
+    public static int[] moveZeros1(int[] nums) {
+        int index = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                nums[index++] = nums[i];
+            }
+        }
+        for (int i = index; i < nums.length; i++) {
+            nums[i] = 0;
+        }
+        return nums;
+    }
+
+    public static int majority(int[] nums) {
+
+        if (nums.length == 1) {
+            return nums[0];
+        }
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int i : nums) {
+            if (map.containsKey(i) && map.get(i) + 1 > nums.length / 2) {
+                return i;
+            } else {
+                map.put(i, map.getOrDefault(i, 0) + 1);
+            }
+        }
+        return -1;
+    }
+
+    public static int notRepeated(int[] nums) {
+        int counter = 0;
+        for (int i = 0; i < nums.length; i++) {
+            counter = counter ^ nums[i];
+        }
+        return counter;
+    }
+
+    public static int notRepeated1(int[] nums) {
+
+        HashMap<Integer, Integer> numsFreq = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (!numsFreq.containsKey(nums[i])) {
+                numsFreq.put(nums[i], 1);
+            } else {
+                numsFreq.put(nums[i], numsFreq.get(nums[i] + 1));
+            }
+        }
+        for (Map.Entry<Integer, Integer> entry : numsFreq.entrySet()) {
+            int key = entry.getKey();
+            int value = entry.getValue();
+            if (value == 1) {
+                return key;
+            }
+        }
+        return -1;
+    }
+
+    public static void products(String[] arrayOfProducts) {
+        for (int i = 0; i < arrayOfProducts.length; i++) {
             char fChar = arrayOfProducts[i].charAt(0);
-            if(fChar == 'A' || fChar == 'E'
-                    || fChar == 'I' || fChar == 'O' || fChar == 'U' ){
+            if (fChar == 'A' || fChar == 'E'
+                    || fChar == 'I' || fChar == 'O' || fChar == 'U') {
                 System.out.println(arrayOfProducts[i]);
             }
         }
@@ -175,17 +275,17 @@ public class Library {
     public static String repeatedWord(String strings) {
         String lowerCased = strings.toLowerCase(Locale.ROOT);
         String[] stringArr = lowerCased.split(" ");
-        Hashtable<String, Integer> hashMap = new Hashtable<String, Integer>();
+        Hashtable<String, Integer> hashTable = new Hashtable<String, Integer>();
         for (String element : stringArr) {
             if (element.contains(",")) {
                 element = element.substring(0, element.length() - 1);
             }
             if (!element.equals("")) {
-                int counter = hashMap.get(element) != null ? hashMap.get(element) : 0;
+                int counter = hashTable.get(element) != null ? hashTable.get(element) : 0;
                 if (counter == 1) {
                     return element;
                 }
-                hashMap.put(element, counter + 1);
+                hashTable.put(element, counter + 1);
             }
         }
         return "None";
@@ -195,7 +295,7 @@ public class Library {
     public static int repeatedIntegerIndex(int arr[]) {
         Hashtable<Integer, Integer> hashtable = new Hashtable<>();
         int count;
-        int hi = -1;
+
         for (int i = arr.length - 1; i >= 0; i--) {
             if (hashtable.get(arr[i]) != null) {
                 count = hashtable.get(arr[i]);
@@ -207,7 +307,16 @@ public class Library {
             }
             hashtable.put(arr[i], count + 1);
         }
-        return hi;
+        return -1;
+    }
+
+    public static int repeatedInteger(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == nums[i + 1]) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     ///////////////////////////first repeated integer from the end///////////////
@@ -241,7 +350,7 @@ public class Library {
     }
 
     ////////////////////////// return third max integer in an array ////////notyet////////
-    public static int secondMax(int arr[]) {
+    public static int thirdMax(int arr[]) {
         int max = arr[0];
         int secondMax = arr[0];
         int third = arr[0];
@@ -258,6 +367,22 @@ public class Library {
             }
         }
         return third;
+    }
+
+    public static int secondMax(int arr[]) {
+        int max = arr[0];
+        int secondMax = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+
+                secondMax = max;
+                max = arr[i];
+            } else if (arr[i] > secondMax) {
+
+                secondMax = arr[i];
+            }
+        }
+        return secondMax;
     }
 
     ///////// return a new array of the numbers that have no larger numbers on their right//////
@@ -411,6 +536,7 @@ public class Library {
             } else {
                 string = arrays.charAt(i) + string;
             }
+
         }
         return strings;
     }
@@ -429,7 +555,6 @@ public class Library {
     static ArrayList<Integer> hi(int n, int[] his) {
         ArrayList<Integer> list = new ArrayList<>();
         for (int i = his.length - n; i <= his.length - 1; i++) {
-
             list.add(his[i]);
         }
         for (int i = 1; i <= his.length - n; i++) {
@@ -529,10 +654,10 @@ public class Library {
         return sum;
     }
 
-    public static int divider(int number, int division,   int counter) {
+    public static int divider(int number, int division, int counter) {
         if (number >= division) {
             counter++;
-            return divider(number-division, division, counter);
+            return divider(number - division, division, counter);
         }
         return counter;
     }
