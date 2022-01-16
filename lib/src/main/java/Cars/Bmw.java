@@ -8,7 +8,7 @@ public class Bmw extends Car implements Cars{
         super(type, model, price);
     }
 
-    public Bmw() {
+    public  Bmw() {
     }
 
 

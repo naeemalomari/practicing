@@ -167,6 +167,7 @@ public class Library {
         return nums;
     }
 
+// [ 1,0,2,0,3,12 ] ---> [1,2,3,12,0,0]
     public static int[] moveZeros1(int[] nums) {
         int index = 0;
         for (int i = 0; i < nums.length; i++) {

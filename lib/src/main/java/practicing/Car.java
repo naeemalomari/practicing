@@ -11,7 +11,6 @@ public abstract class Car implements Cars {
     protected Double price;
 
 
-
     public Car(String type, Integer model, Double price) {
         this.type = type;
         this.model = model;
@@ -22,37 +21,34 @@ public abstract class Car implements Cars {
     }
 
 
-    public void setType(String type){
-        this.type=type;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public void setModel (Integer model){
-        this.model=model;
-    }
-
-    public void setPrice(Double price){
-        this.price=price;
-    }
-
-    public String getType(){
+    public String getType() {
         return type;
     }
 
-    public Integer getModel(){
+
+    public void setModel(Integer model) {
+        this.model = model;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Integer getModel() {
         return model;
     }
 
-    public Double getPrice(){
+    public Double getPrice() {
         return price;
     }
 
     @Override
     public String toString() {
-        return "Car{" +
-                "type='" + type + '\'' +
-                ", model=" + model +
-                ", price=" + price +
-                '}';
+        return "Car{" + "type='" + type + '\'' + ", model=" + model + ", price=" + price + '}';
     }
 
     @Override
@@ -67,4 +63,5 @@ public abstract class Car implements Cars {
     public int hashCode() {
         return Objects.hash(type, model, price);
     }
+
 }
