@@ -30,7 +30,6 @@ public class Library {
 //        bmw2.setModel(2010);
 //        System.out.println(bmw2.getModel());
 //
-//
 //        System.out.println(bmw.hashCode());
 //        System.out.println(bmw2.hashCode());
 //        System.out.println(bmw.equals(bmw2));
@@ -114,16 +113,16 @@ public class Library {
 //        set.add(5);
 //        System.out.println(set);
 
-//        String[] arrayOfProducts = {"Apple", "Banana", "CucuAmber", "Watermelon", "Ice-cream", "Orange", "Eggplant",
-//                "Egg"};
-//        System.out.println("--------------------------- Q 1 ------------------------");
-//        products(arrayOfProducts);
-//        System.out.println("--------------------------- Q 2 ------------------------");
-//
-//        printProduct(arrayOfProducts);
-//        System.out.println("--------------------------- Q 3 ------------------------");
-//
-//        countCharacters("THis & * 12345678z_k ");
+        String[] arrayOfProducts = {"Apple", "Banana", "CucuAmber", "Watermelon", "Ice-cream", "Orange", "Eggplant",
+                "Egg"};
+        System.out.println("--------------------------- Q 1 ------------------------");
+        products(arrayOfProducts);
+        System.out.println("--------------------------- Q 2 ------------------------");
+
+        printProduct(arrayOfProducts);
+        System.out.println("--------------------------- Q 3 ------------------------");
+
+        countCharacters("THis & * 12345678z_k ");
 
 //        System.out.println(divider(16,4,0));
 
@@ -136,8 +135,10 @@ public class Library {
 //        int[] nums = {0, 1, 0, 3, 12};
 //        System.out.println(Arrays.toString(moveZeros1(nums)));
 //
-        int[] array = {4, 3, 2, 7, 2, 3, 1, 9};
-        System.out.println(findDisappearedNumbers(array));
+//        int[] array = {4, 3, 2, 7, 2, 3, 1, 9};
+//        System.out.println(findDisappearedNumbers(array));
+
+
     }
 
     public static List<Integer> findDisappearedNumbers(int[] nums) {
